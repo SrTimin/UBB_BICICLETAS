@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UBB BICICLETAS</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_qr">Scanear QR</string>
+    <string name="title_Historial">Historial</string>
+    <string name="Bienvenido">Bienvenido</string>
+</resources>

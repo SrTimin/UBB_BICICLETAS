@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">UBB BICICLETAS</string>
+    <string name="app_name">BikeUBB</string>
     <string name="title_home">Inicio</string>
     <string name="title_qr">Scanear QR</string>
-    <string name="title_Historial">Historial</string>
+    <string name="title_Registro">Registros</string>">
     <string name="Bienvenido">Bienvenido</string>
+    <string name="RegistroActivo">Registro Activo</string>
+    <string name="RegistroInactivo">Historial de Registros</string>
+
+
 </resources>

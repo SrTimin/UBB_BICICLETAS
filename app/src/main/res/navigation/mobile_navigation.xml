@@ -11,15 +11,18 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.ubbbicicletas.ui.dashboard.DashboardFragment"
-        android:label="@string/title_qr"
-        tools:layout="@layout/fragment_dashboard" />
+    <action
+        android:id="@+id/action_global_qr_scanner"
+        app:destination="@id/qr_scanner" />
+
+    <activity
+        android:id="@+id/qr_scanner"
+        android:name="com.example.ubbbicicletas.QRScannerActivity"
+        android:label="@string/title_qr" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.ubbbicicletas.ui.notifications.NotificationsFragment"
-        android:label="@string/title_Historial"
+        android:label="@string/title_Registro"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

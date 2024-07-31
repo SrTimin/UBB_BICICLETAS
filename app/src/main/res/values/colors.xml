@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Original colors -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#203c74</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="prussian_blue">#002d54</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="primary_text_color">#212121</color>
+    <color name="secondary_text_color">#757575</color>
+
+    <!-- New colors based on Prussian Blue -->
+    <color name="primary">@color/prussian_blue</color>
+    <color name="primary_dark">#001c33</color> <!-- Darker shade of Prussian Blue -->
+    <color name="primary_light">#335577</color> <!-- Lighter shade of Prussian Blue -->
+
+    <!-- Accent color -->
+    <color name="accent">#ffc107</color> <!-- Amber for contrast -->
+
+    <!-- Text colors -->
+    <color name="text_on_primary">@color/white</color> <!-- White text on primary color -->
+
+    <!-- Background colors -->
+    <color name="surface">@color/white</color> <!-- White surface color -->
+
+    <!-- Other utility colors -->
+    <color name="divider">#bdbdbd</color> <!-- Light grey for dividers -->
+    <color name="error">#b00020</color> <!-- Red for error states -->
 </resources>

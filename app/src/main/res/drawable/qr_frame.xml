@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+
+    <!-- Esquina Superior Izquierda -->
+    <path
+        android:pathData="M16,16 L16,40 L40,40 L40,16 Z"
+        android:strokeWidth="4"
+        android:strokeColor="@color/primary"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- Esquina Superior Derecha -->
+    <path
+        android:pathData="M200,16 L200,40 L224,40 L224,16 Z"
+        android:strokeWidth="4"
+        android:strokeColor="@color/primary"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- Esquina Inferior Izquierda -->
+    <path
+        android:pathData="M16,200 L16,224 L40,224 L40,200 Z"
+        android:strokeWidth="4"
+        android:strokeColor="@color/primary"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- Esquina Inferior Derecha -->
+    <path
+        android:pathData="M200,200 L200,224 L224,224 L224,200 Z"
+        android:strokeWidth="4"
+        android:strokeColor="@color/primary"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- Líneas horizontales y verticales para formar el marco completo -->
+    <path
+        android:pathData="M16,16 L224,16"
+        android:strokeWidth="2"
+        android:strokeColor="@color/primary_container"
+        android:strokeLineCap="round"/>
+
+    <path
+        android:pathData="M16,224 L224,224"
+        android:strokeWidth="2"
+        android:strokeColor="@color/primary_container"
+        android:strokeLineCap="round"/>
+
+    <path
+        android:pathData="M16,16 L16,224"
+        android:strokeWidth="2"
+        android:strokeColor="@color/primary_container"
+        android:strokeLineCap="round"/>
+
+    <path
+        android:pathData="M224,16 L224,224"
+        android:strokeWidth="2"
+        android:strokeColor="@color/primary_container"
+        android:strokeLineCap="round"/>
+
+    <!-- Línea de escaneo animada -->
+    <path
+        android:pathData="M20,120 L220,120"
+        android:strokeWidth="2"
+        android:strokeColor="@color/accent"
+        android:strokeLineCap="round"/>
+
+</vector>

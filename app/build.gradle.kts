@@ -47,6 +47,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation ("com.google.android.material:material:1.11.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

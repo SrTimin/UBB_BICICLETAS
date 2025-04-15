@@ -1,247 +1,582 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color">
+    android:background="@color/background">
 
-    <LinearLayout
+    <!-- Barra de app personalizada con degradado y ondas decorativas -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone"/>
-
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
+            <!-- Fondo con gradiente para la cabecera -->
+            <View
+                android:id="@+id/headerBackground"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/header_gradient_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Imagen decorativa de onda en la cabecera -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"
+                android:scaleType="fitXY"
+                android:src="@drawable/wave_pattern"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/background" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingHorizontal="20dp"
+                android:paddingTop="48dp"
+                android:paddingBottom="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Nombre de la universidad y logo -->
+                <ImageView
+                    android:id="@+id/logoUbb"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_bike_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/appTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/inter"
+                    android:text="BikeUBB"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/subtitleText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/logoUbb"
+                    app:layout_constraintTop_toTopOf="@+id/logoUbb" />
+
+                <TextView
+                    android:id="@+id/subtitleText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="Sistema de Bicicletas UBB"
+                    android:textColor="@color/white"
+                    android:alpha="0.8"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/logoUbb"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/appTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/appTitle" />
+
+                <!-- Avatar del usuario -->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/userAvatar"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@color/white"
+                    android:padding="2dp"
+                    android:src="@drawable/default_avatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logoUbb"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
 
                 <TextView
                     android:id="@+id/textHome"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:textColor="@color/primary_text_color"/>
-
-                <TextView
-                    android:id="@+id/nombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/inter"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:textColor="@color/secondary_text_color"
-                    app:drawableStartCompat="@drawable/ic_user"
-                    android:drawablePadding="8dp"
-                    android:layout_marginTop="16dp"/>
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textCarrera"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/userAvatar"
+                    app:layout_constraintTop_toTopOf="@+id/userAvatar"
+                    tools:text="¡Hola, María Fernández!" />
 
                 <TextView
-                    android:id="@+id/ingreso"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textCarrera"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Año-Periodo Ingreso: "
-                    android:textStyle="bold"
-                    android:textColor="@color/secondary_text_color"
-                    android:layout_marginTop="8dp"/>
+                    android:fontFamily="@font/inter"
+                    android:textColor="@color/white"
+                    android:alpha="0.85"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/userAvatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textHome"
+                    app:layout_constraintTop_toBottomOf="@+id/textHome"
+                    tools:text="Ingeniería Civil Informática" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+    <!-- Contenido principal con scroll -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="80dp"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <!-- Indicador de progreso -->
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/primary"
+                app:trackColor="@color/surface_dark" />
+
+            <!-- Mis bicicletas - Tarjeta principal con estado actual -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Carrera"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="@color/primary_text_color"/>
-
-                <TextView
-                    android:id="@+id/carrera"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:drawableStartCompat="@drawable/ic_graduation_cap"
-                    android:drawablePadding="8dp"
-                    android:textColor="@color/secondary_text_color"
-                    android:layout_marginTop="8dp"/>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Contacto"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="@color/primary_text_color"
-                    app:drawableStartCompat="@drawable/ic_contact"
-                    android:drawablePadding="8dp"/>
+                android:layout_marginBottom="16dp"
+                style="@style/Widget.BikeUBB.Card"
+                app:strokeWidth="0dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_phone"
-                        android:layout_marginEnd="8dp"/>
+                    <!-- Cabecera de la tarjeta con gradiente -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_header_gradient"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="16dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_bike"
+                            android:drawablePadding="12dp"
+                            android:drawableTint="@color/white"
+                            android:fontFamily="@font/inter"
+                            android:gravity="center_vertical"
+                            android:text="Mi Bicicleta"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                    <!-- Contenido de la tarjeta -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Número de teléfono:"
-                            android:textColor="@color/secondary_text_color"
-                            android:textStyle="bold"/>
+                            android:padding="8dp">
 
-                        <TextView
-                            android:id="@+id/numero"
-                            android:layout_width="wrap_content"
+                            <ImageView
+                                android:id="@+id/bikeStatusIcon"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/ic_bike_status"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/accent" />
+
+                            <TextView
+                                android:id="@+id/bikeStatusTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:fontFamily="@font/inter"
+                                android:text="Estado Actual:"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/bikeStatusIcon"
+                                app:layout_constraintTop_toTopOf="@+id/bikeStatusIcon" />
+
+                            <TextView
+                                android:id="@+id/bicicleta"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter"
+                                android:textColor="@color/primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/bikeStatusTitle"
+                                app:layout_constraintTop_toBottomOf="@+id/bikeStatusTitle"
+                                tools:text="No tienes ninguna bicicleta registrada" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/scanQrButton"
+                            style="@style/Widget.BikeUBB.Button.Primary"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/secondary_text_color"/>
-
+                            android:layout_marginTop="12dp"
+                            android:text="Escanear código QR"
+                            app:icon="@drawable/ic_qr_code"
+                            app:iconGravity="textStart" />
                     </LinearLayout>
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Datos personales -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/Widget.BikeUBB.Card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_email"
-                        android:layout_marginEnd="8dp"/>
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="16dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_profile"
+                            app:tint="@color/primary" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Correo personal:"
-                            android:textColor="@color/secondary_text_color"
-                            android:textStyle="bold"/>
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter"
+                            android:text="Datos Personales"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/correoPersonal"
-                            android:layout_width="wrap_content"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <!-- Información personal -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="16dp">
+
+                        <!-- Nombre completo -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/secondary_text_color"/>
+                            android:layout_marginBottom="12dp"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter"
+                                android:text="Nombre completo"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/nombre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/inter"
+                                android:textColor="@color/text_primary"
+                                android:textSize="16sp"
+                                tools:text="María Fernández Rodriguez" />
+                        </LinearLayout>
+
+                        <!-- Carrera -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Correo institucional:"
-                            android:textColor="@color/secondary_text_color"
-                            android:textStyle="bold"
-                            android:layout_marginTop="8dp"/>
+                            android:layout_marginBottom="12dp"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/correo"
-                            android:layout_width="wrap_content"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter"
+                                android:text="Carrera"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/carrera"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/inter"
+                                android:textColor="@color/text_primary"
+                                android:textSize="16sp"
+                                tools:text="Ingeniería Civil Informática" />
+                        </LinearLayout>
+
+                        <!-- Año-Período de Ingreso -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/secondary_text_color"/>
+                            android:layout_marginBottom="12dp"
+                            android:orientation="vertical">
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter"
+                                android:text="Año-Período de ingreso"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/ingreso"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/inter"
+                                android:textColor="@color/text_primary"
+                                android:textSize="16sp"
+                                tools:text="2023-2" />
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
+            <!-- Información de contacto -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginBottom="16dp"
+                style="@style/Widget.BikeUBB.Card">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bicicletas"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/bicicleta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawablePadding="8dp"
-                    android:textColor="@color/secondary_text_color" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="16dp">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_contact"
+                            app:tint="@color/primary" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/logoutButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cerrar Sesión"
-            android:layout_marginTop="16dp"
-            app:icon="@drawable/ic_logout"
-            app:iconGravity="textStart"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter"
+                            android:text="Información de Contacto"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <!-- Datos de contacto -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="16dp">
+
+                        <!-- Teléfono -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginEnd="16dp"
+                                android:src="@drawable/ic_phone"
+                                app:tint="@color/accent" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:text="Teléfono"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/numero"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="16sp"
+                                    tools:text="+56 9 1234 5678" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Correo personal -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginEnd="16dp"
+                                android:src="@drawable/ic_email_personal"
+                                app:tint="@color/accent" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:text="Correo personal"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/correoPersonal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="16sp"
+                                    tools:text="maria.fernandez@gmail.com" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Correo institucional -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginEnd="16dp"
+                                android:src="@drawable/ic_email_work"
+                                app:tint="@color/accent" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/inter"
+                                    android:text="Correo institucional"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/correo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="@font/inter"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="16sp"
+                                    tools:text="maria.fernandez@ubiobio.cl" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Botón de cierre de sesión -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logoutButton"
+                style="@style/Widget.BikeUBB.Button.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                android:text="Cerrar Sesión"
+                android:textColor="@color/danger"
+                app:icon="@drawable/ic_logout"
+                app:iconGravity="textStart"
+                app:iconTint="@color/danger"
+                app:strokeColor="@color/danger" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

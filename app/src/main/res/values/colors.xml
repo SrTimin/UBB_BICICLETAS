@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Original colors -->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#203c74</color>
+    <!-- Colores originales (algunos mantenidos como referencia) -->
     <color name="prussian_blue">#002d54</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_color">#F5F5F5</color>
-    <color name="primary_text_color">#212121</color>
-    <color name="secondary_text_color">#757575</color>
+    
+    <!-- Nueva paleta moderna centrada en azul prusiano -->
+    <!-- Paleta primaria -->
+    <color name="primary">#002d54</color> <!-- Azul Prusiano original -->
+    <color name="primary_dark">#001c38</color> <!-- Azul Prusiano más oscuro -->
+    <color name="primary_light">#1e4574</color> <!-- Azul Prusiano más claro -->
+    <color name="on_primary">#FFFFFF</color>
+    
+    <!-- Variante del color primario para contenedores -->
+    <color name="primary_container">#d3e4ff</color>
+    <color name="primary_container_dark">#001e3d</color>  <!-- Versión oscura para el modo nocturno -->
+    <color name="on_primary_container">#001c38</color>
+    
+    <!-- Paleta secundaria - Tonos de azul complementarios para elementos interactivos -->
+    <color name="secondary">#0d6efd</color>
+    <color name="secondary_dark">#0048bf</color>
+    <color name="secondary_light">#64a3ff</color>
+    <color name="on_secondary">#FFFFFF</color>
+    
+    <!-- Contenedores secundarios -->
+    <color name="secondary_container">#dbe8ff</color>
+    <color name="on_secondary_container">#00327d</color>
+    
+    <!-- Colores de acento - Para llamadas a la acción y elementos destacados -->
+    <color name="accent">#ff8c00</color> <!-- Naranja complementario -->
+    <color name="accent_dark">#cc7000</color>
+    <color name="accent_light">#ffb84d</color>
+    <color name="on_accent">#FFFFFF</color>
+    
+    <!-- Colores de superficie y fondo -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_dark">#f7f9fc</color> <!-- Gris muy claro con tono azulado -->
+    <color name="on_surface">#131f2a</color> <!-- Azul casi negro para textos -->
+    
+    <color name="background">#f0f4fa</color> <!-- Fondo principal con tono azul muy sutil -->
+    <color name="on_background">#1a1a1a</color>
+    
+    <!-- Colores para estados -->
+    <color name="success">#198754</color>
+    <color name="info">#0dcaf0</color>
+    <color name="warning">#ffc107</color>
+    <color name="danger">#dc3545</color>
+    <color name="on_state_color">#FFFFFF</color>
+    
+    <!-- Colores para textos -->
+    <color name="text_primary">#1a1a1a</color>
+    <color name="text_secondary">#5c636a</color>
+    <color name="text_tertiary">#8c98a4</color>
+    <color name="text_hint">#adb5bd</color>
+    
+    <!-- Colores de utilidad -->
+    <color name="divider">#e9ecef</color>
+    <color name="card_stroke">#e0e4eb</color>
+    <color name="ripple">#33002d54</color> <!-- Azul prussiano con 20% de opacidad -->
+    
+    <!-- Colores de marca UBB -->
+    <color name="ubb_blue">#002d54</color> <!-- El mismo azul prussiano, para consistencia de marca -->
 
-    <!-- New colors based on Prussian Blue -->
-    <color name="primary">@color/prussian_blue</color>
-    <color name="primary_dark">#001c33</color> <!-- Darker shade of Prussian Blue -->
-    <color name="primary_light">#335577</color> <!-- Lighter shade of Prussian Blue -->
-
-    <!-- Accent color -->
-    <color name="accent">#ffc107</color> <!-- Amber for contrast -->
-
-    <!-- Text colors -->
-    <color name="text_on_primary">@color/white</color> <!-- White text on primary color -->
-
-    <!-- Background colors -->
-    <color name="surface">@color/white</color> <!-- White surface color -->
-
-    <!-- Other utility colors -->
-    <color name="divider">#bdbdbd</color> <!-- Light grey for dividers -->
-    <color name="error">#b00020</color> <!-- Red for error states -->
+    <!-- Colores faltantes referenciados en los layouts -->
+    <color name="background_color">@color/background</color>
+    <color name="secondary_text_color">@color/text_secondary</color>
+    <color name="surface_variant">#E6EEF7</color>  <!-- Variante más clara de la superficie -->
+    <color name="primary_text_color">@color/text_primary</color>
 </resources>

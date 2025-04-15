@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta de modo oscuro basada en el azul prusiano original -->
+    
+    <!-- Colores primarios para modo oscuro -->
+    <color name="primary">#4c7db3</color> <!-- Versión más clara del azul prusiano para modo oscuro -->
+    <color name="primary_dark">#002d54</color> <!-- El azul prusiano original para elementos oscuros -->
+    <color name="primary_light">#7babdb</color> <!-- Azul más claro aún para ciertos elementos -->
+    <color name="on_primary">#000000</color>
+    
+    <!-- Variante del color primario para contenedores -->
+    <color name="primary_container">#003566</color>
+    <color name="on_primary_container">#d3e4ff</color>
+    
+    <!-- Paleta secundaria para modo oscuro -->
+    <color name="secondary">#64a3ff</color>
+    <color name="secondary_dark">#0d6efd</color>
+    <color name="secondary_light">#9ec5ff</color>
+    <color name="on_secondary">#000000</color>
+    
+    <!-- Contenedores secundarios -->
+    <color name="secondary_container">#004999</color>
+    <color name="on_secondary_container">#dbe8ff</color>
+    
+    <!-- Colores de acento para modo oscuro -->
+    <color name="accent">#ffb84d</color> <!-- Naranja más brillante para modo oscuro -->
+    <color name="accent_dark">#ff8c00</color>
+    <color name="accent_light">#ffd699</color>
+    <color name="on_accent">#000000</color>
+    
+    <!-- Colores de superficie y fondo para modo oscuro -->
+    <color name="surface">#1c2732</color> <!-- Azul muy oscuro para tarjetas -->
+    <color name="surface_dark">#121a22</color> <!-- Azul casi negro para fondos oscuros -->
+    <color name="on_surface">#e6e6e6</color> <!-- Blanco casi puro para textos -->
+    
+    <color name="background">#0a121b</color> <!-- Fondo principal muy oscuro con tono azulado -->
+    <color name="on_background">#f0f0f0</color>
+    
+    <!-- Colores para textos en modo oscuro -->
+    <color name="text_primary">#f0f0f0</color>
+    <color name="text_secondary">#b0b8c1</color>
+    <color name="text_tertiary">#8c98a4</color>
+    <color name="text_hint">#6c757d</color>
+    
+    <!-- Colores de utilidad para modo oscuro -->
+    <color name="divider">#2d3846</color>
+    <color name="card_stroke">#374151</color>
+    <color name="ripple">#334c7db3</color> <!-- Primary con 20% de opacidad -->
+</resources>

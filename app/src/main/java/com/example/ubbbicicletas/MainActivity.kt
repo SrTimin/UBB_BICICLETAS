@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Configurar la Toolbar como ActionBar
+        setSupportActionBar(binding.toolbar)
+
         val navView: BottomNavigationView = binding.navView
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
